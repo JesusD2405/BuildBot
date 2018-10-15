@@ -28,7 +28,7 @@ export default class Login extends Component {
   render() {
 	return (
 
-		<View style={styles.login}>
+		<View style={styles.content}>
 
 			<View style={styles.titleBox}>
 
@@ -76,7 +76,7 @@ export default class Login extends Component {
 
 const styles = StyleSheet.create({
 
-	login: {
+	content: {
 		flex: 1,
 		backgroundColor: '#158FBF',
 	},

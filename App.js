@@ -24,7 +24,9 @@ type Props = {};
 export default class App extends Component<Props> {
 
   render() {
-	return <Router>
+	return 
+	<Router>
+
 		<Scene key="root">
 			<Scene key="login" component={Login} title="Login" hideNavBar/>
 			<Scene key="Register" component={Register} title="Register" hideNavBar/>
@@ -34,7 +36,8 @@ export default class App extends Component<Props> {
 			<Scene key="RobotTO_LV1" component={RobotTO_LV1} title="RobotTO_LV1" hideNavBar/>
 			<Scene key="RobotMO_LV1" component={RobotMO_LV1} title="RobotMO_LV1" hideNavBar/>
 		</Scene>
-		</Router>
+		
+	</Router>
   }
 }
 
