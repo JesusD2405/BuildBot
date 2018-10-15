@@ -24,8 +24,7 @@ type Props = {};
 export default class App extends Component<Props> {
 
   render() {
-	return 
-	<Router>
+	return <Router>
 
 		<Scene key="root">
 			<Scene key="login" component={Login} title="Login" hideNavBar/>

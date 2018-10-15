@@ -32,7 +32,7 @@ export default class Login extends Component {
 
 			<View style={styles.titleBox}>
 
-				<Text style={styles.title}> Iniciar Sesión</Text>
+				<Text style={styles.title}> Iniciar Sesión </Text>
 
 			</View>	
 
