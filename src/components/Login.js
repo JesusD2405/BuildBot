@@ -9,12 +9,20 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
 
+import { Actions } from 'react-native-router-flux';
+
 export default class Login extends Component {
 
-	onPress (){
+	onRegister ()
+	{
+		// Redireccionamos a la sección de registro
+		Actions.Register();
+	}
 
-		console.warn('Hola!');
-
+	onLogin()
+	{
+		// Redireccionamos a la sección de registro
+		Actions.Presentation();
 	}
 
   render() {
@@ -45,14 +53,14 @@ export default class Login extends Component {
 			<View style={styles.loginAcountBox}>
 
 				<Button
-				  onPress={this.onPress}
-				  title="Registrarse"
-				  color="#01579b"
-				  accessibilityLabel="Learn more about this purple button"
-				/>
+					onPress={this.onRegister}
+					title="Registrarse"
+					color="#01579b"
+					accessibilityLabel="Learn more about this purple button"
+					/>
 
 				<Button
-				  onPress={this.onPress}
+				  onPress={this.onLogin}
 				  title="Iniciar Sesión"
 				  color="#01579b"
 				  accessibilityLabel="Learn more about this purple button"
@@ -70,6 +78,7 @@ const styles = StyleSheet.create({
 
 	login: {
 		flex: 1,
+		backgroundColor: '#158FBF',
 	},
 
 	// Contenedor del titulo de la pantalla
