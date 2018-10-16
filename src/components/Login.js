@@ -129,6 +129,7 @@ export default class Login extends Component {
 		<View style={styles.loginAcountBox}>
 
 					<Button
+<<<<<<< HEAD
 						onPress={this.onLogin}
 						title="Iniciar Sesión"
 						color="#095573"
@@ -147,8 +148,19 @@ export default class Login extends Component {
 					  color="#095573"
 					  accessibilityLabel="Learn more about this purple button"
 					  
+=======
+					  onPress={this.onLogin}
+					  title="Iniciar Sesión"
+					  color="#158FBF"
+					  //style={{paddingTop:50}}
+>>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
 					/>
 
+					<Button
+						onPress={this.onRegister}
+						title="Registrarse"
+						color="#0281ce"
+						/>
 		</View>
 
 	 </KeyboardAwareScrollView>
@@ -174,10 +186,16 @@ const styles = StyleSheet.create({
 
 	// Contenedor del titulo de la pantalla
 	titleBox: {
+<<<<<<< HEAD
 		//flexDirection: 'row',
 		backgroundColor: '#095573',
 		
 
+=======
+		flexDirection: 'row',
+		backgroundColor: '#158FBF',
+		justifyContent: 'center',
+>>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
 		//width: 150,
 		//height: 80,
 		//flex: 0.5,
@@ -195,11 +213,13 @@ const styles = StyleSheet.create({
 	// Contenedor del icono principal
 
 	iconoBox:{
+<<<<<<< HEAD
 		flex: 2,
 		marginBottom :'5%',
+=======
+		flex: 3,
+>>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
 		justifyContent: 'center',
-
-    	
 		
 	},
 

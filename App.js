@@ -39,7 +39,3 @@ export default class App extends Component<Props> {
 	</Router>
   }
 }
-
-const styles = StyleSheet.create({
-
-});
