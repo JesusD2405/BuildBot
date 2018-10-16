@@ -10,9 +10,14 @@
     "@babel/runtime": "^7.1.2",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "^0.57.1",
+<<<<<<< HEAD
     "react-native-draggable": "^1.0.14",
+=======
+    "react-native-elements": "^0.19.1",
+>>>>>>> 02d35c5c0f895a3ceac68e373e01d4683dae23ef
     "react-native-keyboard-aware-scroll-view": "^0.7.3",
-    "react-native-router-flux": "^4.0.5"
+    "react-native-router-flux": "^4.0.5",
+    "react-native-vector-icons": "^6.0.2"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
