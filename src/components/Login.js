@@ -8,19 +8,21 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button, TextInput, KeyboardAvoidingView, StatusBar} from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Icon } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
 
+
 	constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = {text: null, text2: null};
+
     
    }
 
-	onRegister ()
+	onRegister()
 	{
 		// Redireccionamos a la sección de registro
 		Actions.Register();
@@ -33,7 +35,7 @@ export default class Login extends Component {
 	}
 
   render() {
-  
+  	
 	return (
 
  <KeyboardAwareScrollView
@@ -59,13 +61,15 @@ export default class Login extends Component {
 							/>
 							
 		</View>	
+		
+		
 
 	    <View style={styles.loginFormBox}>
-
-	 
+						
+	 					
 
 						<TextInput
-					        style={{ borderColor: '#35D0F2', borderWidth: 6, flex: 3,
+					        style={{ borderColor: '#158FBF', borderWidth: 0, flex: 1,
 		    					paddingTop: '5%',
 		    					paddingRight: '5%',
 		    					paddingBottom: '5%',
@@ -78,48 +82,71 @@ export default class Login extends Component {
 					        returnKeyType = { "next" }
     						onSubmitEditing={() => { this.secondTextInput.focus(); }}
     						blurOnSubmit={false}
-					        
-
 					     />
 
-					     <TextInput
-					     secureTextEntry={true}
-					        style={{ borderColor: '#35D0F2', borderWidth: 6, flex: 3,
+					     <Icon style={styles.searchIcon} name="person" size={40} color="#424242"/>
 
-		    					paddingTop: '5%',
-		    					paddingRight: '5%',
-		    					paddingBottom: '5%',
-		    					paddingLeft: '5%',
-		    					backgroundColor: '#fff',
-		    					color: '#424242',}}
-					        placeholder="*********"
-		          			onChangeText={(text) => this.setState({text})}
-					        value={this.state.text}
-
-					        
-     ref={(input) => { this.secondTextInput = input; }}
-					        
-
-					     />
+					    
 	
 
 		</View>
 
+		<View style={{flex:0.1,flexDirection:"row",justifyContent:'space-between'}}>
+            
+            </View>
+
+		<View style={styles.loginFormBox}>
+						
+	 					
+
+					
+
+					     <TextInput
+					     secureTextEntry={true}
+					        style={{ borderColor: '#158FBF', borderWidth: 0, flex: 1,
+		    				paddingTop: '5%',
+		    				paddingRight: '5%',
+		    				paddingBottom: '5%',
+		    				paddingLeft: '5%',
+		    				backgroundColor: '#fff',
+		    				color: '#424242',}}
+					        placeholder="*********"
+		          			onChangeText={(text2) => this.setState({text2})}
+					        value={this.state.text2}					     
+     						ref={(input) => { this.secondTextInput = input; }}
+     						blurOnSubmit={false}
+					     />
+
+					     <Icon style={styles.searchIcon2} name="lock" size={40} color='#424242'/>
+	
+
+		</View>
+
+		<View style={{flex:0.2,flexDirection:"row",justifyContent:'space-between'}}>
+            
+            </View>
+
 		<View style={styles.loginAcountBox}>
 
 					<Button
-						onPress={this.onRegister}
-						title="Registrarse"
-						color="#0281ce"
+						onPress={this.onLogin}
+						title="Iniciar Sesión"
+						color="#095573"
 						accessibilityLabel="Learn more about this purple button"
 						/>
 
+					
+
+		</View>
+
+		<View style={styles.loginAcountBox2}>
+
 					<Button
-					  onPress={this.onLogin}
-					  title="Iniciar Sesión"
-					  color="#158FBF"
+					  onPress={this.onRegister}
+					  title="Registrarse"
+					  color="#095573"
 					  accessibilityLabel="Learn more about this purple button"
-					  //style={{paddingTop:50}}
+					  
 					/>
 
 		</View>
@@ -137,7 +164,7 @@ const styles = StyleSheet.create({
 
 	container: {
 		flex: 1,
-		backgroundColor: '#35D0F2',
+		backgroundColor: '#158FBF',
 		flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'stretch',
@@ -148,8 +175,8 @@ const styles = StyleSheet.create({
 	// Contenedor del titulo de la pantalla
 	titleBox: {
 		//flexDirection: 'row',
-		backgroundColor: '#158FBF',
-		//justifyContent: 'center',
+		backgroundColor: '#095573',
+		
 
 		//width: 150,
 		//height: 80,
@@ -158,18 +185,18 @@ const styles = StyleSheet.create({
 
 	// Texto titulo de la pantalla
 	title: {
-		fontSize: 40,
+		fontSize: 30,
 		color: 'white',
 		fontWeight: 'bold',
 		fontFamily: 'Cochin',
-
+		alignSelf: 'center',
     },
 
 	// Contenedor del icono principal
 
 	iconoBox:{
-		flex: 3,
-
+		flex: 2,
+		marginBottom :'5%',
 		justifyContent: 'center',
 
     	
@@ -182,20 +209,70 @@ const styles = StyleSheet.create({
 
 	// Inputs
 	loginFormBox: {
-		backgroundColor: '#FBFBEF',
-		flex: 0.8,
-		marginLeft: '15%',
-		marginRight: '15%',
+		backgroundColor: '#fff',
+		flex: 0.3,
+		marginLeft: '10%',
+		marginRight: '10%',
+		
+		flexDirection: 'row',
+    	justifyContent: 'center',
+    	alignItems: 'center',
+		//width: 150,
+		//height: 100,
+
+	},
+
+	loginFormBox2: {
+		backgroundColor: '#fff',
+		flex: 0.3,
+		marginLeft: '10%',
+		marginRight: '10%',
+		
+		flexDirection: 'row',
+    	justifyContent: 'center',
+    	alignItems: 'center',
 		//width: 150,
 		//height: 100,
 
 	},
 
 	// Logueo
-	/*loginAcountBox: {
+	loginAcountBox: {
+		
+		marginBottom :'5%',
+		marginLeft: '10%',
+		marginRight: '10%',
 		//flex: 1,
 		//width: 150,
 		//height: 100,
-	},*/
+		backgroundColor: '#095573',
+	},
+
+	loginAcountBox2: {
+		marginBottom :'10%',
+		marginLeft: '10%',
+
+		marginRight: '10%',
+		//flex: 1,
+		//width: 150,
+		//height: 100,
+		backgroundColor: '#095573',
+	},
+
+	searchIcon: {
+    //padding: 200,
+    backgroundColor: '#FBFBEF',
+    
+
+	},
+
+	searchIcon2: {
+	borderWidth: 10,
+    //padding: 200,
+    backgroundColor: '#FBFBEF',
+    paddingRight: 10,
+    alignSelf: 'center',
+
+	},
 
 });
