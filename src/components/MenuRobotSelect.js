@@ -7,15 +7,25 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class MenuRobotSelect extends Component {
 
-	onPlay ()
+	onPlay (robot)
 	{
-		console.warn('Empieza el juego..!');
-		// Redireccionamos a la sección de registro
-		//Actions.MenuRobotSelect();
+		if (robot=='robotMo') 
+		{
+			//console.warn('Seleccionó un robot móvil');
+			// Redireccionamos a la sección de registro
+			Actions.RobotMO_LV1();
+		}
+		else
+		{
+			//console.warn('Seleccionó un robot teleoperado');
+			// Redireccionamos a la sección de registro
+			Actions.RobotTO_LV1();
+		}
 	}
 
   render() {
@@ -29,41 +39,24 @@ export default class MenuRobotSelect extends Component {
 
 			</View>
 
-			<View>
-
-				<Text style={styles.textContent}> 
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-				</Text>
-
-			</View>
-
-			<View>
-				<Button
-					onPress={this.onPlay}
-					title="Empezar el juego"
-					color="#01579b"
-					accessibilityLabel="Learn more about this purple button"
+			<TouchableOpacity
+				onPress={() => this.onPlay('robotMo')}>
+				<Text> Robot Movil </Text>
+				<Image 
+					style={styles.robotSelect}
+					source={require('../assets/img/robotMovil.png')}
 					/>
-			</View>
+			</TouchableOpacity>
+
+			<TouchableOpacity
+				onPress={() => this.onPlay('robotTo')}
+				>
+				<Text> Tele Operado </Text>
+				<Image 
+					style={styles.robotSelect}
+					source={require('../assets/img/robotTeleOperado.png')}
+					/>
+			</TouchableOpacity>
 
 		</View>	
 	);
@@ -75,13 +68,16 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 		backgroundColor: '#158FBF',
+		//justifyContent: 'center',
+		//alignItems: 'center',
 	},
 
 	// Contenedor del titulo de la pantalla
 	titleBox: {
 		flexDirection: 'row',
 		backgroundColor: '#0277bd',
-		justifyContent: 'center',
+		//justifyContent: 'center',
+		//alignItems: 'center',
 		//width: 150,
 		height: 80,
 	},
@@ -94,5 +90,19 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontFamily: 'Cochin',
     },
+
+    robotSelect: {
+	    width: '50%',
+		height: '50%',
+	},
+
+	countContainer: {
+		alignItems: 'center',
+		padding: 10
+	},
+
+	countText: {
+		color: '#FF00FF'
+	}
 
 });

@@ -108,20 +108,17 @@ export default class Login extends Component {
 		<View style={styles.loginAcountBox}>
 
 					<Button
-						onPress={this.onRegister}
-						title="Registrarse"
-						color="#0281ce"
-						accessibilityLabel="Learn more about this purple button"
-						/>
-
-					<Button
 					  onPress={this.onLogin}
 					  title="Iniciar Sesión"
 					  color="#158FBF"
-					  accessibilityLabel="Learn more about this purple button"
 					  //style={{paddingTop:50}}
 					/>
 
+					<Button
+						onPress={this.onRegister}
+						title="Registrarse"
+						color="#0281ce"
+						/>
 		</View>
 
 	 </KeyboardAwareScrollView>
@@ -147,10 +144,9 @@ const styles = StyleSheet.create({
 
 	// Contenedor del titulo de la pantalla
 	titleBox: {
-		//flexDirection: 'row',
+		flexDirection: 'row',
 		backgroundColor: '#158FBF',
-		//justifyContent: 'center',
-
+		justifyContent: 'center',
 		//width: 150,
 		//height: 80,
 		//flex: 0.5,
@@ -169,10 +165,7 @@ const styles = StyleSheet.create({
 
 	iconoBox:{
 		flex: 3,
-
 		justifyContent: 'center',
-
-    	
 		
 	},
 
