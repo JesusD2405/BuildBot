@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button, TextInput, KeyboardAvoidingView, StatusBar} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button, TextInput, KeyboardAvoidingView, StatusBar,  Keyboard} from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Icon } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
@@ -56,7 +56,7 @@ export default class Login extends Component {
 
 						<Image 
 							style={{flex:1, height: undefined, width: undefined}}
-							source={require('../assets/img/icono.png')}
+							source={require('../assets/img/icono2.png')}
 							//resizeMode="cover"
 							/>
 							
@@ -84,7 +84,7 @@ export default class Login extends Component {
     						blurOnSubmit={false}
 					     />
 
-					     <Icon style={styles.searchIcon} name="person" size={40} color="#424242"/>
+					     <Icon style={styles.searchIcon} name="person" size={33} color="#424242"/>
 
 					    
 	
@@ -115,9 +115,10 @@ export default class Login extends Component {
 					        value={this.state.text2}					     
      						ref={(input) => { this.secondTextInput = input; }}
      						blurOnSubmit={false}
+     						onSubmitEditing={Keyboard.dismiss}
 					     />
 
-					     <Icon style={styles.searchIcon2} name="lock" size={40} color='#424242'/>
+					     <Icon style={styles.searchIcon2} name="lock" size={33} color='#424242'/>
 	
 
 		</View>
@@ -129,7 +130,6 @@ export default class Login extends Component {
 		<View style={styles.loginAcountBox}>
 
 					<Button
-<<<<<<< HEAD
 						onPress={this.onLogin}
 						title="Iniciar Sesión"
 						color="#095573"
@@ -141,27 +141,15 @@ export default class Login extends Component {
 		</View>
 
 		<View style={styles.loginAcountBox2}>
-
-					<Button
-					  onPress={this.onRegister}
-					  title="Registrarse"
-					  color="#095573"
-					  accessibilityLabel="Learn more about this purple button"
-					  
-=======
-					  onPress={this.onLogin}
-					  title="Iniciar Sesión"
-					  color="#158FBF"
-					  //style={{paddingTop:50}}
->>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
-					/>
-
 					<Button
 						onPress={this.onRegister}
 						title="Registrarse"
 						color="#0281ce"
-						/>
+						accessibilityLabel="Learn more about this purple button"
+					/>
 		</View>
+
+
 
 	 </KeyboardAwareScrollView>
 
@@ -186,16 +174,15 @@ const styles = StyleSheet.create({
 
 	// Contenedor del titulo de la pantalla
 	titleBox: {
-<<<<<<< HEAD
+
 		//flexDirection: 'row',
 		backgroundColor: '#095573',
 		
 
-=======
+
 		flexDirection: 'row',
 		backgroundColor: '#158FBF',
 		justifyContent: 'center',
->>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
 		//width: 150,
 		//height: 80,
 		//flex: 0.5,
@@ -213,12 +200,12 @@ const styles = StyleSheet.create({
 	// Contenedor del icono principal
 
 	iconoBox:{
-<<<<<<< HEAD
+
 		flex: 2,
 		marginBottom :'5%',
-=======
+
 		flex: 3,
->>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
+
 		justifyContent: 'center',
 		
 	},
@@ -230,7 +217,7 @@ const styles = StyleSheet.create({
 	// Inputs
 	loginFormBox: {
 		backgroundColor: '#fff',
-		flex: 0.3,
+		flex: 0.5,
 		marginLeft: '10%',
 		marginRight: '10%',
 		

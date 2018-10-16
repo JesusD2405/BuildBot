@@ -33,7 +33,7 @@ export default class Presentation extends Component {
 			<View style={styles.textcontainer}>
 
 				<Text style={styles.textContent}> 
-<<<<<<< HEAD
+
 					<Text style={{ fontSize: 24,color: 'white',fontWeight: 'bold',fontFamily: 'Cochin',
 					 }}>
     					Clasificación{"\n"}{"\n"}
@@ -71,14 +71,13 @@ export default class Presentation extends Component {
 
   					
 
-=======
+
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
->>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
 				</Text>
 
 			</View>
@@ -87,12 +86,11 @@ export default class Presentation extends Component {
 				<Button
 					onPress={this.onNext}
 					title="Siguiente"
-<<<<<<< HEAD
 					color="#095573"
 					accessibilityLabel="Learn more about this purple button"
-=======
+
 					color="#01579b"
->>>>>>> e2ccff16b65c5ad109f91eb67c684c38e9807066
+
 					/>
 			</View>
 
