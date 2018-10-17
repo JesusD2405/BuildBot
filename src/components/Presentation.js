@@ -20,7 +20,7 @@ export default class Presentation extends Component {
 
 	onNext ()
 	{
-		console.warn('Holaaaa');
+		
 		// Redireccionamos a la sección del menú del juego
 		Actions.MenuRobotSelect();
 	}

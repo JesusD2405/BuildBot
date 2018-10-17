@@ -24,13 +24,12 @@ constructor(props) {
 
    onRegister()
 	{
-		console.warn('1');
 		// Redireccionamos a la sección de registro
 		Actions.Register();
 	}
 
 	onLogin()
-	{	console.warn('2');
+	{	
 		// Redireccionamos a la sección de registro
 		Actions.Presentation();
 	}

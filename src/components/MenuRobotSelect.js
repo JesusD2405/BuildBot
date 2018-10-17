@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, TouchableOpacity,  Button} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 export default class MenuRobotSelect extends Component {
@@ -35,29 +35,35 @@ export default class MenuRobotSelect extends Component {
 
 			<View style={styles.titleBox}>
 
-				<Text style={styles.title}> Seleccionar Robots </Text>
+				<Text style={styles.title}> Seleccionar Robot </Text>
 
 			</View>
+		
+		
 
 			<TouchableOpacity
-				onPress={() => this.onPlay('robotMo')}>
-				<Text> Robot Movil </Text>
-				<Image 
-					style={styles.robotSelect}
-					source={require('../assets/img/robotMovil.png')}
-					/>
+					style={styles.button}
+					onPress={() => this.onPlay('robotMo')}>
+					<Image 
+						style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+
+						source={require('../assets/img/robotMovil.png')}
+						/>
 			</TouchableOpacity>
 
+			
+
 			<TouchableOpacity
+				style={styles.button}
 				onPress={() => this.onPlay('robotTo')}
 				>
-				<Text> Tele Operado </Text>
 				<Image 
-					style={styles.robotSelect}
+					style={{flex:0.51, height: undefined, width: undefined, resizeMode : 'contain'}}
 					source={require('../assets/img/robotTeleOperado.png')}
 					/>
 			</TouchableOpacity>
-
+			
+		
 		</View>	
 	);
   }
@@ -68,33 +74,44 @@ const styles = StyleSheet.create({
 	content: {
 		flex: 1,
 		backgroundColor: '#158FBF',
-		//justifyContent: 'center',
-		//alignItems: 'center',
+
+        
+        
 	},
+
+	button: {
+		flex:1,
+		resizeMode : 'contain',
+    	backgroundColor: '#158FBF',
+     	marginBottom: '-20%',
+     	
+
+  	},
 
 	// Contenedor del titulo de la pantalla
 	titleBox: {
-		flexDirection: 'row',
-		backgroundColor: '#0277bd',
-		//justifyContent: 'center',
-		//alignItems: 'center',
+		//flexDirection: 'row',
+		backgroundColor: '#095573',
+		
+
 		//width: 150,
-		height: 80,
+		//height: 80,
+		//flex: 0.5,
 	},
+
+
+
 
 	// Texto titulo de la pantalla
 	title: {
-		fontSize: 40,
-		paddingTop: 10,
+		fontSize: 30,
 		color: 'white',
 		fontWeight: 'bold',
 		fontFamily: 'Cochin',
+		alignSelf: 'center',
     },
 
-    robotSelect: {
-	    width: '50%',
-		height: '50%',
-	},
+   
 
 	countContainer: {
 		alignItems: 'center',
