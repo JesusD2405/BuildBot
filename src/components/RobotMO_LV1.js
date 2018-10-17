@@ -9,6 +9,8 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button} from 'react-native';
 
+import Draggable1 from './Draggable1';
+
 export default class RobotMO_LV1 extends Component {
 
   render() {
@@ -19,6 +21,12 @@ export default class RobotMO_LV1 extends Component {
 			<View style={styles.titleBox}>
 
 				<Text style={styles.title}> Armar Robot </Text>
+
+			</View>
+
+			<View style={styles.DraggableBox}>
+
+				<Draggable1 />
 
 			</View>
 
@@ -51,5 +59,10 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		fontFamily: 'Cochin',
     },
+
+    DraggableBox:
+    {
+    	flexDirection: 'column',
+    }
 
 });

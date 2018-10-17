@@ -45,7 +45,7 @@ export default class Login extends Component {
 
 	    <View style={styles.titleBox}>
 	    			<StatusBar hidden={true} />
-					<Text style={styles.title}> Iniciar Sesión </Text>
+					<Text style={styles.title}> Iniciar Sesión</Text>
 
 
 		</View>	
@@ -54,7 +54,7 @@ export default class Login extends Component {
 
 						<Image 
 							style={{flex:1, height: undefined, width: undefined}}
-							source={require('../assets/img/icono2.png')}
+							source={require('../assets/img/robot.png')}
 							//resizeMode="cover"
 							/>
 							
@@ -94,11 +94,7 @@ export default class Login extends Component {
             </View>
 
 		<View style={styles.loginFormBox}>
-						
-	 					
-
 					
-
 					     <TextInput
 					     secureTextEntry={true}
 					        style={{ borderColor: '#158FBF', borderWidth: 0, flex: 1,
@@ -141,7 +137,7 @@ export default class Login extends Component {
 					<Button
 						onPress={() => this.onRegister()}
 						title="Registrarse"
-						color="#0281ce"
+						color="#095573"
 					/>
 		</View>
 
@@ -177,7 +173,7 @@ const styles = StyleSheet.create({
 
 
 		flexDirection: 'row',
-		backgroundColor: '#158FBF',
+		backgroundColor: '#095573',
 		justifyContent: 'center',
 		//width: 150,
 		//height: 80,

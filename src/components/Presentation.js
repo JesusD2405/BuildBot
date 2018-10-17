@@ -20,7 +20,6 @@ export default class Presentation extends Component {
 
 	onNext ()
 	{
-		
 		// Redireccionamos a la sección del menú del juego
 		Actions.MenuRobotSelect();
 	}
@@ -53,10 +52,9 @@ export default class Presentation extends Component {
 
   					<Text style={{ fontSize: 16,color: 'white',
 					textAlign: 'justify'}}>
-    					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-					commodo consequat.{"\n"}{"\n"}
+    					Estos robots son controlados de manera remota por un operador humano. 
+						A estos artilugios se los utiliza en situaciones extremas como la desactivación de una 
+						bomba o para manipular residuos tóxicos.{"\n"}{"\n"}
 
   					</Text>
 					
@@ -68,22 +66,13 @@ export default class Presentation extends Component {
   					</Text>
   					<Text style={{ fontSize: 16,color: 'white',
 					textAlign: 'justify'}}>
-    					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-					labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-					nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-					commodo consequat.{"\n"}{"\n"}
+    					Estos 
+						robots cuentan con sistemas de sensores, que son los que captan la información 
+						que dichos robots elaboran. Los móviles son utilizados en instalaciones industriales, 
+						en la mayoría de los casos para transportar la mercadería en cadenas de producción así 
+						como también en almacenes. Además, son herramientas muy útiles para investigar zonas muy distantes. {"\n"}{"\n"}
 
-  					</Text>
-
-  					
-
-
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+  					</Text>					 
 				</Text>
 
 			</View>

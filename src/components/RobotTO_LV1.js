@@ -7,126 +7,276 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button, PanResponder, Animated, Dimensions} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button, PanResponder, Animated, Dimensions, TouchableOpacity} from 'react-native';
 
 import Draggable from 'react-native-draggable';
 
 
 export default class RobotTO_LV1 extends Component {
 
-	constructor(props){
-	    super(props);
+	constructor(){
 
-	    this.state = {
-	    	showDraggable   : true,     
-        	dropZoneValues  : null,
-	        pan     : new Animated.ValueXY()   
-	    };
+		super();
 
-	    this.panResponder = PanResponder.create({
+		// Silueta de construcción
+		var Scabeza= false;
+		var Scuerpo= false;
+		var SbrazoDerecho= false;
+		var SbrazoIzquierdo= false;
+		var Spies= false;
 
-    	onStartShouldSetPanResponder : () => true,
-	        onPanResponderMove           : Animated.event([null,{ 
-	            dx : this.state.pan.x,
-	            dy : this.state.pan.y
-	        }]),
-        
-        onPanResponderRelease           : (e, gesture) => {
-            if(this.isDropZone(gesture)){ 
-                this.setState({
-                    showDraggable : false 
-                });
-            }else{
-                Animated.spring(
-                    this.state.pan,
-                    {toValue:{x:0,y:0}}
-                ).start();
-            }
-        }
-    });
+		// Piezas 
+		var cabeza= false;
+		var cuerpo= false;
+		var brazoDerecho= false;
+		var brazoIzquierdo= false;
+		var pies= false;
 	}
 
-	isDropZone(gesture){     
-	    var dz = this.state.dropZoneValues;
-	    return gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height;
+	onRobot (pieza)
+	{
+		switch (pieza) 
+		{
+			case "cabeza":
+
+					if (this.cabeza === true)
+					{
+						this.Scabeza = true;
+					}
+
+				break;
+
+			case "cuerpo":
+
+					if (this.cuerpo === true) 
+					{
+						this.Scuerpo= true;
+					}	
+
+				break;
+
+			case "brazoDerecho":
+
+					if (this.brazoDerecho === true) 
+					{
+						this.SbrazoDerecho= true;
+					}	
+
+				break;
+
+			case "brazoIzquierdo":
+
+					if (this.brazoIzquierdo === true) 
+					{
+						this.SbrazoIzquierdo= true;
+					}	
+
+				break;
+
+			case "pies":
+
+					if (this.pies === true) 
+					{
+						this.Spies= true;
+					}	
+
+				break;	
+		}
+
+		this.finishRobot();	
 	}
 
-	setDropZoneValues(event){      
-	    this.setState({
-	        dropZoneValues : event.nativeEvent.layout
-	    });
+	onPieces(pieza)
+	{
+		switch (pieza) 
+		{
+			case "cabeza":
+					this.cabeza = true;
+				break;
+			case "cuerpo":
+					this.cuerpo= true;
+				break;
+			case "brazoDerecho":
+					this.brazoDerecho= true;
+				break;
+			case "brazoIzquierdo":
+					this.brazoIzquierdo= true;
+				break;
+			case "pies":
+					this.pies= true;
+				break;
+			
+		}
 	}
+
+	finishRobot()
+	{
+		if (((this.Scabeza===true && this.Scuerpo===true) && (this.SbrazoDerecho===true && this.SbrazoIzquierdo===true)) && this.Spies===true)
+		{
+			alert('Felicidades ha construido correctamente su Robot!');
+		}
+	}
+
 
 	render(){
         return (
-            <View style={styles.mainContainer}>
-	            <View 
-	                onLayout={this.setDropZoneValues.bind(this)}     
-	                style={styles.dropZone}>
-	                <Text style={styles.text}>Zona 1</Text>
-	            </View>
+			<View style={styles.content}>
+				<View style={styles.titleBox}>
+					<Text style={styles.title}> Armar Robot</Text>
+				</View>
 
-	            {this.renderDraggable()}
-	        </View>
+				<View style={styles.Game}>
+					
+					<View style={styles.piecesBox }>
+						<Text style={styles.title}> Piezas </Text>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onPieces('cabeza')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
+								source={require('../assets/img/piezasRobot/cabeza.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onPieces('brazoDerecho')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
+								source={require('../assets/img/piezasRobot/brazoDerecho.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onPieces('brazoIzquierdo')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
+								source={require('../assets/img/piezasRobot/brazoIzquierdo.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onPieces('cuerpo')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
+								source={require('../assets/img/piezasRobot/cuerpo.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onPieces('pies')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
+								source={require('../assets/img/piezasRobot/pies.png')}
+							/>
+						</TouchableOpacity>
+
+					</View>
+
+					<View style={styles.robotBox}>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onRobot('cabeza')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+								source={require('../assets/img/estructura/cabeza.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onRobot('cuerpo')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+								source={require('../assets/img/estructura/cuerpo.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onRobot('brazoDerecho')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+								source={require('../assets/img/estructura/brazoDerecho.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onRobot('brazoIzquierdo')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+								source={require('../assets/img/estructura/brazoIzquierdo.png')}
+							/>
+						</TouchableOpacity>
+
+						<TouchableOpacity
+							style={styles.button}
+							onPress={() => this.onRobot('pies')}>
+							<Image 
+								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
+								source={require('../assets/img/estructura/pies.png')}
+							/>
+						</TouchableOpacity>
+
+					</View>
+
+				</View>
+			</View>	
         );
     }
 
-    renderDraggable(){
-    	if(this.state.showDraggable){
-		    return (
-		        <View style={styles.draggableContainer}>
-		            <Animated.View 
-		                {...this.panResponder.panHandlers}                       
-		                style={[this.state.pan.getLayout(), styles.circle]}>     
-		                <Text style={styles.text}>Pieza 1</Text>
-		            </Animated.View>
-
-		            <Animated.View 
-		                {...this.panResponder.panHandlers}                       
-		                style={[this.state.pan.getLayout(), styles.circle]}>     
-		                <Text style={styles.text}>Pieza 2</Text>
-		            </Animated.View>
-
-		            <Animated.View 
-		                {...this.panResponder.panHandlers}                       
-		                style={[this.state.pan.getLayout(), styles.circle]}>     
-		                <Text style={styles.text}>Pieza 3</Text>
-		            </Animated.View>
-
-		        </View>
-    		);
-    	}
-	}
-
-
 }
 
-let CIRCLE_RADIUS = 36;
-let Window = Dimensions.get('window');
-let styles = StyleSheet.create({
-    mainContainer: {
-        flex    : 1
+const styles = StyleSheet.create({
+ 	
+	content: {
+		flex: 1,
+		flexDirection: 'column',
+		backgroundColor: '#158FBF',
+	},
+	button: {
+		flex:1,
+		resizeMode : 'contain',
+    	backgroundColor: '#158FBF',
+     	marginBottom: '-20%',
+  	},
+ 	// Contenedor del titulo de la pantalla
+	titleBox: {
+		flexDirection: 'row',
+		backgroundColor: '#0277bd',
+		justifyContent: 'center', 
+		//alignItems: 'center',
+		//width: 150,
+		height: 80,
+	},
+ 	// Texto titulo de la pantalla
+	title: {
+		fontSize: 40,
+		paddingTop: 10,
+		color: 'white',
+		fontWeight: 'bold',
+		fontFamily: 'Cochin',
     },
-    dropZone    : {
-        height         : 100,
-        backgroundColor:'#2c3e50'
+    Game:{
+    	flex: 1, 
+    	flexDirection: 'row',
     },
-    text        : {
-        marginTop   : 25,
-        marginLeft  : 5,
-        marginRight : 5,
-        textAlign   : 'center',
-        color       : '#fff'
-    },
-    draggableContainer: {
-        position    : 'absolute',
-        top         : Window.height/2 - CIRCLE_RADIUS,
-        left        : Window.width/2 - CIRCLE_RADIUS,
-    },
-    circle      : {
-        backgroundColor     : '#1abc9c',
-        width               : CIRCLE_RADIUS*2,
-        height              : CIRCLE_RADIUS*2,
-        borderRadius        : CIRCLE_RADIUS
-    }
-});
+     piecesBox:
+    {
+    	flexDirection: 'column',
+    	width: '30%',
+    	backgroundColor: '#095573',
+     },
+	robotBox:
+	{
+		flex: 1,
+		flexDirection: 'column',
+		backgroundColor: '#158FBF',
+	}
+ });
