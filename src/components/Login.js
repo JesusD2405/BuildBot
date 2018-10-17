@@ -14,12 +14,10 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Login extends Component {
 
-
 	constructor(props) {
-    super(props);
-    this.state = {text: null, text2: null};
+	    super(props);
+	    this.state = {text: null, text2: null};
 
-    
    }
 
 	onRegister()
@@ -130,22 +128,20 @@ export default class Login extends Component {
 		<View style={styles.loginAcountBox}>
 
 					<Button
-						onPress={this.onLogin}
+						onPress={() => this.onLogin()}
 						title="Iniciar Sesión"
 						color="#095573"
-						accessibilityLabel="Learn more about this purple button"
 						/>
 
 					
 
 		</View>
 
-		<View style={styles.loginAcountBox2}>
+		<View style={styles.loginAcountBox}>
 					<Button
-						onPress={this.onRegister}
+						onPress={() => this.onRegister()}
 						title="Registrarse"
 						color="#0281ce"
-						accessibilityLabel="Learn more about this purple button"
 					/>
 		</View>
 

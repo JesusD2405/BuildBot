@@ -13,8 +13,14 @@ import { Actions } from 'react-native-router-flux';
 
 export default class Presentation extends Component {
 
+	constructor(props) {
+	    super(props);
+
+   }
+
 	onNext ()
 	{
+		console.warn('Holaaaa');
 		// Redireccionamos a la sección del menú del juego
 		Actions.MenuRobotSelect();
 	}
@@ -82,17 +88,19 @@ export default class Presentation extends Component {
 
 			</View>
 
-			<View style={styles.loginAcountBox}>
+			<View style={styles.BottomBox}>
 				<Button
 					onPress={this.onNext}
 					title="Siguiente"
 					color="#095573"
-					accessibilityLabel="Learn more about this purple button"
-
-					color="#01579b"
-
 					/>
 			</View>
+
+			<Button
+				onPress={this.onNext}
+				title="Siguiente"
+				color="#095573"
+				/>
 
 		</View>	
 	);
@@ -159,14 +167,11 @@ const styles = StyleSheet.create({
 		borderColor:'#095573',
     },
 
-   loginAcountBox: {
+   BottomBox: {
 		marginTop :'7%',
 		marginBottom :'5%',
 		marginLeft: '10%',
 		marginRight: '10%',
-		//flex: 1,
-		//width: 150,
-		//height: 100,
 		backgroundColor: '#095573',
 	},
 

@@ -24,12 +24,13 @@ constructor(props) {
 
    onRegister()
 	{
+		console.warn('1');
 		// Redireccionamos a la sección de registro
 		Actions.Register();
 	}
 
 	onLogin()
-	{	
+	{	console.warn('2');
 		// Redireccionamos a la sección de registro
 		Actions.Presentation();
 	}
@@ -164,10 +165,6 @@ constructor(props) {
             </View>
 
 		<View style={styles.loginFormBox}>
-						
-	 					
-
-					
 
 					     <TextInput
 					     secureTextEntry={true}
@@ -198,10 +195,9 @@ constructor(props) {
 		<View style={styles.loginAcountBox}>
 
 					<Button
-						onPress={this.onRegister}
+						onPress={() => this.onRegister()}
 						title="Registrarse"
 						color="#0281ce"
-						accessibilityLabel="Learn more about this purple button"
 					/>
 
 					
@@ -210,13 +206,18 @@ constructor(props) {
 
 		<View style={styles.loginAcountBox2}>
 					<Button
-									onPress={this.onLogin}
-									title="Iniciar Sesión"
-									color="#095573"
-									accessibilityLabel="Learn more about this purple button"
-									/>
+						onPress={() => this.onLogin()}
+						title="Iniciar Sesión"
+						color="#095573"
+						/>
 					
 		</View>
+
+		<Button
+			onPress={() => this.onLogin()}
+			title="Iniciar Sesión"
+			color="#095573"
+			/>
 
 
 
