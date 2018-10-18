@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button, PanResponder, Animated, Dimensions, TouchableOpacity} from 'react-native';
-
+import { Actions } from 'react-native-router-flux';
 import Draggable from 'react-native-draggable';
 
 
@@ -114,6 +114,8 @@ export default class RobotTO_LV1 extends Component {
 		if (((this.Scabeza===true && this.Scuerpo===true) && (this.SbrazoDerecho===true && this.SbrazoIzquierdo===true)) && this.Spies===true)
 		{
 			alert('Felicidades ha construido correctamente su Robot!');
+			Actions.Resultado();
+			
 		}
 	}
 
@@ -135,7 +137,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onPieces('cabeza')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
-								source={require('../assets/img/piezasRobot/cabeza.png')}
+								source={require('../assets/img/robotTeleOperado/piezas/cabeza.png')}
 							/>
 						</TouchableOpacity>
 
@@ -144,7 +146,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onPieces('brazoDerecho')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
-								source={require('../assets/img/piezasRobot/brazoDerecho.png')}
+								source={require('../assets/img/robotTeleOperado/piezas/brazoDerecho.png')}
 							/>
 						</TouchableOpacity>
 
@@ -153,7 +155,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onPieces('brazoIzquierdo')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
-								source={require('../assets/img/piezasRobot/brazoIzquierdo.png')}
+								source={require('../assets/img/robotTeleOperado/piezas/brazoIzquierdo.png')}
 							/>
 						</TouchableOpacity>
 
@@ -162,7 +164,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onPieces('cuerpo')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
-								source={require('../assets/img/piezasRobot/cuerpo.png')}
+								source={require('../assets/img/robotTeleOperado/piezas/cuerpo.png')}
 							/>
 						</TouchableOpacity>
 
@@ -171,7 +173,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onPieces('pies')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%', backgroundColor: '#095573',}}
-								source={require('../assets/img/piezasRobot/pies.png')}
+								source={require('../assets/img/robotTeleOperado/piezas/pies.png')}
 							/>
 						</TouchableOpacity>
 
@@ -184,7 +186,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onRobot('cabeza')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
-								source={require('../assets/img/estructura/cabeza.png')}
+								source={require('../assets/img/robotTeleOperado/estructura/cabeza.png')}
 							/>
 						</TouchableOpacity>
 
@@ -193,7 +195,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onRobot('cuerpo')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
-								source={require('../assets/img/estructura/cuerpo.png')}
+								source={require('../assets/img/robotTeleOperado/estructura/cuerpo.png')}
 							/>
 						</TouchableOpacity>
 
@@ -202,7 +204,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onRobot('brazoDerecho')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
-								source={require('../assets/img/estructura/brazoDerecho.png')}
+								source={require('../assets/img/robotTeleOperado/estructura/brazoDerecho.png')}
 							/>
 						</TouchableOpacity>
 
@@ -211,7 +213,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onRobot('brazoIzquierdo')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
-								source={require('../assets/img/estructura/brazoIzquierdo.png')}
+								source={require('../assets/img/robotTeleOperado/estructura/brazoIzquierdo.png')}
 							/>
 						</TouchableOpacity>
 
@@ -220,7 +222,7 @@ export default class RobotTO_LV1 extends Component {
 							onPress={() => this.onRobot('pies')}>
 							<Image 
 								style={{flex:0.55, height: undefined, width: undefined, resizeMode : 'contain', marginTop:'7%'}}
-								source={require('../assets/img/estructura/pies.png')}
+								source={require('../assets/img/robotTeleOperado/estructura/pies.png')}
 							/>
 						</TouchableOpacity>
 

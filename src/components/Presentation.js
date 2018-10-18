@@ -41,38 +41,25 @@ export default class Presentation extends Component {
 
 					<Text style={{ fontSize: 24,color: 'white',fontWeight: 'bold',fontFamily: 'Cochin',
 					 }}>
-    					Clasificación{"\n"}{"\n"}
+    					Clasificación{"\n"}{"\n"}{"\n"}
   					</Text>
 					
         			
-  					<Text style={{ fontSize: 18,color: 'white',
-					 textDecorationLine : 'underline'}}>
-    					Robots Tele operados.{"\n"}{"\n"}
-  					</Text>
+  				
 
   					<Text style={{ fontSize: 16,color: 'white',
 					textAlign: 'justify'}}>
-    					Estos robots son controlados de manera remota por un operador humano. 
-						A estos artilugios se los utiliza en situaciones extremas como la desactivación de una 
-						bomba o para manipular residuos tóxicos.{"\n"}{"\n"}
+    					Androides:  Los robots humanoides asemejan la morfología humana. Dado su grado de complejidad en el control de este tipo de robots, los avances han sido lentos en sus inicios, si bien en la actualidad encontramos numerosos robots humanoides con capacidades de aprendizaje que les han dotado de una mejor autonomía y control.
+{"\n"}{"\n"}{"\n"}Móviles: Un manipulador móvil es una combinación de una base móvil (generalmente con ruedas) y un torso con brazos manipuladores. El principal campo de aplicación es en aquellos lugares, generalmente industriales, en los que se quiere extender el campo de trabajo de un brazo manipulador y pueden utilizarse, por ejemplo, para el transporte de cargas pesadas.
+{"\n"}{"\n"}{"\n"}Industriales: los robots de este tipo pueden ser electrónicos o mecánicos y se los utiliza para la realización de los procesos de manipulación o fabricación automáticos. 
+{"\n"}{"\n"}{"\n"}Médicos: Son robots con aplicaciones, principalmente en el campo de la cirugía, en las que se hace uso de la precisión de múltiples brazos robóticos para asistir al cirujano en las operaciones. Pueden también controlarse a distancia.
+{"\n"}{"\n"}{"\n"}Teleoperadores: Se trata de robots que se controlan a distancia, ya sea mediante cable físico o inalámbrico (Wi-Fi, Bluetooth, etc.). Lo lo general el término ``control'' a distancia puede referirse a una distancia física, pero también podría significar un cambio de escala, como es el caso de los robots utilizados en cirugía, que requieren del uso de tecnologías micro-robóticas.{"\n"}{"\n"}
 
   					</Text>
 					
 
-  					<Text style={{ fontSize: 18,color: 'white',
-					 textDecorationLine : 'underline'}}>
-    					Robots Móviles.{"\n"}{"\n"}
-
-  					</Text>
-  					<Text style={{ fontSize: 16,color: 'white',
-					textAlign: 'justify'}}>
-    					Estos 
-						robots cuentan con sistemas de sensores, que son los que captan la información 
-						que dichos robots elaboran. Los móviles son utilizados en instalaciones industriales, 
-						en la mayoría de los casos para transportar la mercadería en cadenas de producción así 
-						como también en almacenes. Además, son herramientas muy útiles para investigar zonas muy distantes. {"\n"}{"\n"}
-
-  					</Text>					 
+  					
+  								 
 				</Text>
 
 			</View>

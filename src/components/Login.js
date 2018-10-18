@@ -169,9 +169,6 @@ const styles = StyleSheet.create({
 
 		//flexDirection: 'row',
 		backgroundColor: '#095573',
-		
-
-
 		flexDirection: 'row',
 		backgroundColor: '#095573',
 		justifyContent: 'center',
